@@ -1,7 +1,6 @@
 import random
 import pandas as pd
 def sort(file):
-
     data = pd.read_csv(str(file), header=None, na_values=" NaN")
     data = data[data[0].notna()]
     mylist = data[0].tolist()
@@ -12,8 +11,7 @@ def sort(file):
     print(mylist[-1] + " + " + mylist[0])
 
 x = str(input('enter file name:'))
-
-sort(x)
-
-
-
+if '.csv' in x:
+    sort(x)
+else:
+    sort(x+'.csv')
